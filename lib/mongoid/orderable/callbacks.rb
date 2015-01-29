@@ -66,7 +66,7 @@ module Mongoid
 
       module ClassMethods
         def add_orderable_callbacks
-          before_save :add_to_list
+          before_save :add_to_list, prepend: true
           after_destroy :remove_from_list
         end
       end
